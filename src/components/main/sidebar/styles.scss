@@ -1,0 +1,30 @@
+.sidebar-wrapper {
+  background-color: rgba(82, 80, 84, 1);
+  display: grid;
+  color: rgba(255, 255, 255, 1);
+  grid-gap: 20px;
+  height: 100%;
+}
+.client-presentation {
+  padding: 60px;
+  display: grid;
+  text-align: center;
+  grid-gap: 20px;
+  grid-template-rows: auto min-content auto min-content;
+
+}
+.logo-wrapper {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 10px;
+  border-radius: 20px;
+  height: min-content;
+  width: min-content;
+}
+.client-description {
+  color: rgba(245, 221, 214, 1);
+  align-self: center;
+}
+.sidebar-footer {
+  font-size: 0.5em;
+  align-self: end;
+}
