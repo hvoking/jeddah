@@ -11,6 +11,7 @@ import './styles.scss';
 import { useMapbox } from '../../context/mapbox';
 import { useGeo } from '../../context/filters/geo';
 import { usePropertyApi } from '../../context/api/property';
+import { useLandmarkApi } from '../../context/api/landmark';
 import { useTooltip } from '../../context/tooltip';
 
 // Third-party imports
@@ -22,6 +23,7 @@ export const MapContainer = () => {
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setPlaceCoordinates } = useGeo();
 	const { propertyData, setCurrentId } = usePropertyApi();
+	const { landmarkData } = useLandmarkApi();
 
 	const onDblClick = useCallback((e: any) => {
 		const lng = e.lngLat.lng;
@@ -54,7 +56,7 @@ export const MapContainer = () => {
 				onClick={onClick}
 				interactiveLayerIds={['unclustered-point']}
 			>
-				{/*<Points propertyData={propertyData}/>*/}
+				<Points landmarkData={landmarkData}/>
 		        <CustomMarker 
 		        	filterProperties={propertyData}
 		        	propertyInfo={propertyInfo}

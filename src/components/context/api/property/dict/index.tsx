@@ -22,7 +22,7 @@ export const propertyData: any = [
 	},
 	{
 		property_id: "5",
-		coordinates: "21.8196221539335, -49.06367818738071",
+		coordinates: "21.8196221539335, 39.1293177",
 		area: 300
 	},
 	{

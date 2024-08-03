@@ -1,18 +1,18 @@
 // Third party imports
 import { Source, Layer, LayerProps } from 'react-map-gl';
 
-export const Points = ({ propertyData }: any) => {
+export const Points = ({ landmarkData }: any) => {
 	const unclusteredPointLayer: LayerProps = {
 	  id: 'unclustered-point',
 	  type: 'circle',
-	  source: 'property-point',
+	  source: 'landmark-point',
 	  paint: {
 	    'circle-color': "rgba(122, 122, 222, 1)",
-	    'circle-radius': 10,
+	    'circle-radius': 5,
 	  }
 	};
 	
-	const geojsonPoints: any = propertyData && propertyData.reduce((total: any, item: any) => {
+	const geojsonPoints: any = landmarkData && landmarkData.reduce((total: any, item: any) => {
 		const coord = item.coordinates.split(",");
 		total.push({
 			type: "Feature",
@@ -33,11 +33,9 @@ export const Points = ({ propertyData }: any) => {
 		"features": geojsonPoints
 	}
 
-	console.log(geojsonWrapper)
-
 	return (
 		<Source
-		  id="property-point"
+		  id="landmark-point"
 		  type="geojson"
 		  data={geojsonWrapper}
 		>
