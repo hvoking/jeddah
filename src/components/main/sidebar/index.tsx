@@ -10,6 +10,14 @@ export const Sidebar = () => {
 
 	return (
 		<div className="sidebar-wrapper">
+			<div style={{position: "absolute", zIndex: "0", justifySelf: "center", paddingTop: "20px"}}>
+				<img 
+					src={`${process.env.PUBLIC_URL}/static/logos/background.svg`} 
+					alt="background-logo" 
+					width="100%"
+					style={{filter: "drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2))"}}
+				/>
+			</div>
 			{!currentId ? 
 				<div className="client-presentation">
 					<div></div>

@@ -4,6 +4,7 @@
   color: rgba(255, 255, 255, 1);
   grid-gap: 20px;
   height: 100%;
+  position: relative;
 }
 .client-presentation {
   padding: 60px;
@@ -11,7 +12,7 @@
   text-align: center;
   grid-gap: 20px;
   grid-template-rows: auto min-content auto min-content;
-
+  z-index: 1;
 }
 .logo-wrapper {
   background-color: rgba(255, 255, 255, 1);
