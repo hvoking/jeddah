@@ -27,7 +27,10 @@ export const CustomMarker = ({ filterProperties, propertyInfo, currentId, setCur
           return (
             <Marker key={index} longitude={longitude} latitude={latitude}>
               <div className="marker-content-wrapper">
-                <div className={currentId === propertyId || currentId === null ? "marker-content-active" : "marker-content"} onClick={(e: any) => onClick(e, marker)}>
+                <div 
+                  className={currentId === propertyId || currentId === null ? "marker-content-active" : "marker-content"} 
+                  onClick={(e: any) => onClick(e, marker)}
+                >
                   <img src={jeddahProperty} alt="jeddah-property" className="zoomed-image"/>
                 </div>
               </div>

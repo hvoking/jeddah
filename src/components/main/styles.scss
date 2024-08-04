@@ -3,3 +3,9 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+  } 
+}
