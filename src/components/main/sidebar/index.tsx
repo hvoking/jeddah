@@ -13,7 +13,7 @@ export const Sidebar = () => {
 	return (
 		<div className="sidebar-wrapper">
 			<Background/>
-			{!currentId ? <Presentation/> : <Properties currentId={currentId}/>}
+			{!currentId ? <Presentation/> : <Properties currentId={currentId} data={propertyData}/>}
 		</div>
 	)
 }

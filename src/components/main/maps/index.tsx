@@ -35,6 +35,7 @@ export const MapContainer = () => {
 	const onClick = (event: any) => {
 		setPropertyHoverInfo(null);
 		const feature = event.features && event.features[0];
+		console.log(feature)
 		if (feature) {
 			setCurrentId(feature.property_id);
 			setPropertyHoverInfo(feature);

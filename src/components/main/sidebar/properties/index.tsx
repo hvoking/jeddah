@@ -1,8 +1,14 @@
 // App imports
+import { Footer } from '../presentation/footer'
 import './styles.scss';
 
-export const Properties = ({ currentId }: any) => {
+
+export const Properties = ({ currentId, data }: any) => {
 	const jeddahPropertyPath = `${process.env.PUBLIC_URL}/static/jeddah/${currentId}.jpg`;
+	const jeddahIcon = `${process.env.PUBLIC_URL}/static/logos/icon.svg`;
+
+	const currentProperty = data.find((p: any) => p.property_id === currentId);
+
 	return (
 		<div className="second-page-wrapper">
 			<img 
@@ -11,19 +17,44 @@ export const Properties = ({ currentId }: any) => {
 				className="jeddah-property-image"
 			/>
 			<div className="sidebar-description-wrapper">
-				<div>
+				<div className="sidebar-description-item">
 					<div>Property ID #</div>
-					<div>8</div>
+					<div>{currentId}</div>
 				</div>
-				<div>
+				<div className="sidebar-description-item">
 					<div>Area (m²)</div>
-					<div>478.81</div>
+					<div>{currentProperty.area}</div>
 				</div>
-				<div>
+				<div className="sidebar-description-item">
 					<div>Landmarks</div>
-					<div>Jeddah University, Aziz Mall, Shobra Center</div>
+					<div>{currentProperty.landmarks}</div>
 				</div>
 			</div>
+			<div></div>
+			<div style={{
+				justifySelf: "center", 
+				alignSelf: "center", 
+				height: "100px",
+				width: "100px"
+			}}>
+				<img 
+					src={jeddahIcon} 
+					alt="jeddah-icon" 
+					className="jeddah-icon"
+					width="50px"
+					height="50px"
+					style={{
+						backgroundColor: "rgba(255, 255, 255, 1)", 
+						padding: "10px", 
+						borderRadius: "50%",
+						filter:"drop-shadow(2px 2px 2px rgba(0, 0, 0, 1))"
+
+					}}
+
+
+				/>
+			</div>
+			<Footer/>
 		</div>
 	)
 }
