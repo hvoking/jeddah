@@ -1,0 +1,9 @@
+.background-image-wrapper {
+	position: absolute; 
+	z-index: 0; 
+	justify-self: center; 
+	padding-top: 20px;
+}
+.background-image {
+	filter: drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2));
+}

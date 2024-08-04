@@ -1,0 +1,14 @@
+.second-page-wrapper {
+  display: grid;
+  z-index: 1;
+  overflow: hidden;
+  grid-template-rows: 1fr 1fr;
+}
+.jeddah-property-image {
+  margin: auto;
+  width: 90%;
+  max-height: 80%;
+  user-select: none;
+  object-fit: contain;
+  overflow: hidden;
+}

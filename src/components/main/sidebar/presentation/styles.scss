@@ -1,0 +1,12 @@
+.client-presentation {
+  padding: 60px;
+  display: grid;
+  text-align: center;
+  grid-gap: 20px;
+  grid-template-rows: auto min-content auto min-content;
+  z-index: 1;
+}
+.client-description {
+  color: rgba(245, 221, 214, 1);
+  align-self: center;
+}
