@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jeddah/static/css/main.69398afd.css",
-    "main.js": "/jeddah/static/js/main.3540fadf.js",
+    "main.css": "/jeddah/static/css/main.5a359b44.css",
+    "main.js": "/jeddah/static/js/main.e2d9a814.js",
     "static/js/879.473c0d01.chunk.js": "/jeddah/static/js/879.473c0d01.chunk.js",
     "index.html": "/jeddah/index.html",
-    "main.69398afd.css.map": "/jeddah/static/css/main.69398afd.css.map",
-    "main.3540fadf.js.map": "/jeddah/static/js/main.3540fadf.js.map",
+    "main.5a359b44.css.map": "/jeddah/static/css/main.5a359b44.css.map",
+    "main.e2d9a814.js.map": "/jeddah/static/js/main.e2d9a814.js.map",
     "879.473c0d01.chunk.js.map": "/jeddah/static/js/879.473c0d01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69398afd.css",
-    "static/js/main.3540fadf.js"
+    "static/css/main.5a359b44.css",
+    "static/js/main.e2d9a814.js"
   ]
 }
