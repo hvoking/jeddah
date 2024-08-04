@@ -22,7 +22,7 @@ export const MapContainer = () => {
 	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setPlaceCoordinates } = useGeo();
-	const { propertyData, setCurrentId } = usePropertyApi();
+	const { propertyData, currentId, setCurrentId } = usePropertyApi();
 	const { landmarkData } = useLandmarkApi();
 
 	const onDblClick = useCallback((e: any) => {
@@ -61,6 +61,7 @@ export const MapContainer = () => {
 		        <CustomMarker 
 		        	filterProperties={propertyData}
 		        	propertyInfo={propertyInfo}
+		        	currentId={currentId}
 		        	setCurrentId={setCurrentId}
 		        	setPropertyInfo={setPropertyInfo}
 					setPropertyHoverInfo={setPropertyHoverInfo}

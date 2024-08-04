@@ -41,8 +41,8 @@ export const Properties = ({ currentId, data }: any) => {
 					src={jeddahIcon} 
 					alt="jeddah-icon" 
 					className="jeddah-icon"
-					width="50px"
-					height="50px"
+					width="45px"
+					height="45px"
 					style={{
 						backgroundColor: "rgba(255, 255, 255, 1)", 
 						padding: "10px", 

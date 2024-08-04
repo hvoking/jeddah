@@ -1,7 +1,17 @@
 .marker-content-wrapper {
   border: 2px solid rgba(0, 122, 0, 1);
   border-radius: 50%;
-  position: relative; /* Needed for the triangle */
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+}
+.marker-content-active {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .12);
+  border: 2px solid rgba(255, 255, 255, 1);
 }
 .marker-content {
   width: 40px;
@@ -10,7 +20,8 @@
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, .12);
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 1);
+  opacity: 0.5;
 }
 .zoomed-image {
   width: 50px;
@@ -24,9 +35,9 @@
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 8px solid rgba(0, 122, 0, 1); /* Adjust color to match the border */
+  border-top: 8px solid rgba(0, 122, 0, 1);
   position: absolute;
-  bottom: -8px; /* Position the triangle */
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
 }
