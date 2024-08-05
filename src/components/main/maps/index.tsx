@@ -5,6 +5,7 @@ import { useCallback } from 'react';
 import { Points } from './points';
 import { CustomPopup } from './popup';
 import { CustomMarker } from './marker';
+import { Dropdown } from './dropdown';
 import './styles.scss';
 
 // Context imports
@@ -44,6 +45,7 @@ export const MapContainer = () => {
 
 	return (
 		<div className="map-wrapper">
+			<Dropdown/>
 			<Map
 				ref={mapRef}
 				initialViewState={viewport}

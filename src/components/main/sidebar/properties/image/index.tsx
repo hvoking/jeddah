@@ -13,15 +13,27 @@ export const PropertyImage = ({ currentId}: any) => {
 
 	useEffect(() => {
 	    const currentSelection = d3.select(zoomRef.current);
-	    const currentItem = currentSelection.select("img");
+	    const currentItem: any = currentSelection.select("img");
+
 	    const zoomed = (e: any) => {
-	      currentItem.style("transform", `translate(${e.transform.x}px, ${e.transform.y}px) scale(${e.transform.k})`);
+	      const { width, height } = currentItem.node().getBoundingClientRect();
+	      const { clientWidth, clientHeight } = zoomRef.current;
+
+	      // Calculate the maximum translation values
+	      const maxX = (width * e.transform.k - clientWidth) / 2;
+	      const maxY = (height * e.transform.k - clientHeight) / 2;
+
+	      // Constrain the translation values
+	      const translateX = Math.max(Math.min(e.transform.x, maxX), -maxX);
+	      const translateY = Math.max(Math.min(e.transform.y, maxY), -maxY);
+
+	      currentItem.style("transform", `translate(${translateX}px, ${translateY}px) scale(${e.transform.k})`);
 	    };
 
 	    currentSelection.call(d3.zoom()
-	      .scaleExtent([1, 100000])
+	      .scaleExtent([1, 100])
 	      .on("zoom", zoomed));
-	}, [currentId]);
+	  }, [currentId]);
 
 	return (
 		<div ref={zoomRef} className="jeddah-property-image-wrapper">
