@@ -1,0 +1,15 @@
+.jeddah-icon-wrapper {
+	justify-self: center; 
+	align-self: center; 
+	height: 100px;
+	cursor: pointer;
+}
+.jeddah-icon-image {
+	background-color: rgba(255, 255, 255, 1); 
+	padding: 10px; 
+	border-radius: 50%;
+	filter:drop-shadow(2px 2px 2px rgb(0 0 0 / 0.2));
+}
+.jeddah-icon-image:hover {
+	background-color: rgba(255, 255, 255, 0.9); 
+}

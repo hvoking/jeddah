@@ -8,12 +8,20 @@ import './styles.scss';
 import { usePropertyApi } from '../../context/api/property';
 
 export const Sidebar = () => {
-	const { propertyData, currentId } = usePropertyApi();
+	const { propertyData, currentId, setCurrentId } = usePropertyApi();
 
 	return (
 		<div className="sidebar-wrapper">
 			<Background/>
-			{!currentId ? <Presentation/> : <Properties currentId={currentId} data={propertyData}/>}
+			{
+				!currentId ? 
+				<Presentation/> : 
+				<Properties 
+					currentId={currentId} 
+					setCurrentId={setCurrentId} 
+					data={propertyData}
+				/>
+			}
 		</div>
 	)
 }
