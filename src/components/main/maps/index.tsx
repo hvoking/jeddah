@@ -3,7 +3,6 @@ import { useCallback } from 'react';
 
 // App imports
 import { Points } from './points';
-import { CustomPopup } from './popup';
 import { CustomMarker } from './marker';
 import { Dropdown } from './dropdown';
 import './styles.scss';
@@ -20,7 +19,7 @@ import { Map } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 export const MapContainer = () => {
-	const { propertyInfo, setPropertyInfo, propertyHoverInfo, setPropertyHoverInfo } = useTooltip();
+	const { propertyInfo, setPropertyInfo } = useTooltip();
 	const { mapRef, currentBasemap } = useMapbox();
 	const { viewport, setPlaceCoordinates } = useGeo();
 	const { propertyData, currentId, setCurrentId } = usePropertyApi();
@@ -34,11 +33,9 @@ export const MapContainer = () => {
 	}, []);
 
 	const onClick = (event: any) => {
-		setPropertyHoverInfo(null);
 		const feature = event.features && event.features[0];
 		if (feature) {
 			setCurrentId(feature.property_id);
-			setPropertyHoverInfo(feature);
 			propertyInfo && setPropertyInfo(feature); 
 		}
 	}
@@ -65,15 +62,7 @@ export const MapContainer = () => {
 		        	currentId={currentId}
 		        	setCurrentId={setCurrentId}
 		        	setPropertyInfo={setPropertyInfo}
-					setPropertyHoverInfo={setPropertyHoverInfo}
 		        />
-				{/*{propertyHoverInfo && 
-					<CustomPopup 
-						marker={propertyHoverInfo} 
-						setPropertyInfo={setPropertyInfo}
-						setPropertyHoverInfo={setPropertyHoverInfo}
-					/>
-				}*/}
 			</Map>
 		</div>
 	)

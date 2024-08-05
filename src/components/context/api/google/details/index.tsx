@@ -33,7 +33,6 @@ export const GoogleDetailsApiProvider = ({children}: any) => {
 
 	useEffect(() => {
 		if (googleDetailsData) {
-			const addressComponents = googleDetailsData.result.address_components;
 			const longitude = googleDetailsData.result.geometry.location.lng;
 			const latitude = googleDetailsData.result.geometry.location.lat;
 			setPlaceCoordinates({longitude: longitude, latitude: latitude});

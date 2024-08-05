@@ -10,13 +10,11 @@ export const useTooltip = () => {
 }
 
 export const TooltipProvider = ({children}: any) => {
-  const [ propertyHoverInfo, setPropertyHoverInfo ] = useState(null);
   const [ propertyInfo, setPropertyInfo ] = useState(null);
   const [ activePropertyInfo, setActivePropertyInfo ] = useState(false);
 
   return (
     <TooltipContext.Provider value={{ 
-      propertyHoverInfo, setPropertyHoverInfo, 
       propertyInfo, setPropertyInfo,
       activePropertyInfo, setActivePropertyInfo,
     }}>
