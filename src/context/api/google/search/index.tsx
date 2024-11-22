@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useGeo } from '../../../filters/geo';
+import { useGeo } from 'context/filters/geo';
 
 const GoogleSearchApiContext: React.Context<any> = createContext(null)
 
