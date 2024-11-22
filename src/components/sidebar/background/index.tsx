@@ -5,7 +5,7 @@ export const Background = () => {
 	return (
 		<div className="background-image-wrapper">
 			<img 
-				src={`${process.env.PUBLIC_URL}/static/logos/background.svg`} 
+				src={`${process.env.PUBLIC_URL}/static/site/background.svg`} 
 				alt="background-logo" 
 				width="100%"
 				className="background-image"

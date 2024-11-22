@@ -8,11 +8,11 @@ import { Dropdown } from './dropdown';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from '../../context/mapbox';
-import { useGeo } from '../../context/filters/geo';
-import { usePropertyApi } from '../../context/api/property';
-import { useLandmarkApi } from '../../context/api/landmark';
-import { useTooltip } from '../../context/tooltip';
+import { useMapbox } from 'context/mapbox';
+import { useGeo } from 'context/filters/geo';
+import { usePropertyApi } from 'context/api/property';
+import { useLandmarkApi } from 'context/api/landmark';
+import { useTooltip } from 'context/tooltip';
 
 // Third-party imports
 import { Map } from 'react-map-gl';

@@ -5,7 +5,7 @@ import { Properties } from './properties';
 import './styles.scss';
 
 // Context imports
-import { usePropertyApi } from '../../context/api/property';
+import { usePropertyApi } from 'context/api/property';
 
 export const Sidebar = () => {
 	const { propertyData, currentId, setCurrentId } = usePropertyApi();

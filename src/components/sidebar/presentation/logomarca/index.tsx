@@ -6,7 +6,7 @@ export const Logomarca = () => {
 		<div className="logomarca-wrapper">
 			<div className="logo-wrapper">
 				<img 
-					src={`${process.env.PUBLIC_URL}/static/logos/black.svg`} 
+					src={`${process.env.PUBLIC_URL}/static/site/black.svg`} 
 					alt="logo" 
 					width="300px"
 				/>
