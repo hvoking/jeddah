@@ -1,14 +1,14 @@
 // App imports
-import { ApiProvider } from './api';
-import { FiltersProvider } from './filters';
-import { MapboxProvider } from './mapbox';
-import { TooltipProvider } from './tooltip';
+import { GeoProvider } from './geo';
+import { SliderProvider } from './slider';
 import { DraggableProvider } from './draggable';
+import { TooltipProvider } from './tooltip';
+import { ApiProvider } from './api';
 
-export const MainProvider = ({children}: any) => {
+export const ContextProvider = ({children}: any) => {
   return (
-    <FiltersProvider>
-    <MapboxProvider>
+    <GeoProvider>
+    <SliderProvider>
     <DraggableProvider>
     <TooltipProvider>
     <ApiProvider>
@@ -16,9 +16,9 @@ export const MainProvider = ({children}: any) => {
     </ApiProvider>
     </TooltipProvider>
     </DraggableProvider>
-    </MapboxProvider>
-    </FiltersProvider>
+    </SliderProvider>
+    </GeoProvider>
   )
 }
 
-MainProvider.displayName="MainProvider";
+ContextProvider.displayName="ContextProvider";

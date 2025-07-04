@@ -2,7 +2,7 @@
 import './styles.scss';
 
 // Third-party imports
-import { Marker } from 'react-map-gl';
+import { Marker } from 'react-map-gl/mapbox';
 
 export const CustomMarker = ({ filterProperties, propertyInfo, currentId, setCurrentId, setPropertyInfo }: any) => {
   const onClick = (e: any, marker: any) => {

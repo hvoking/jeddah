@@ -1,5 +1,5 @@
 // React imports
-import { useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 // App imports
 import { Points } from './points';
@@ -8,64 +8,67 @@ import { Dropdown } from './dropdown';
 import './styles.scss';
 
 // Context imports
-import { useMapbox } from 'context/mapbox';
-import { useGeo } from 'context/filters/geo';
+import { useGeo } from 'context/geo';
 import { usePropertyApi } from 'context/api/property';
 import { useLandmarkApi } from 'context/api/landmark';
 import { useTooltip } from 'context/tooltip';
 
 // Third-party imports
-import { Map } from 'react-map-gl';
+import { Map } from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-export const MapContainer = () => {
+export const Layout = () => {
 	const { propertyInfo, setPropertyInfo } = useTooltip();
-	const { mapRef, currentBasemap } = useMapbox();
-	const { viewport, setPlaceCoordinates } = useGeo();
+	const { mapRef, viewport, mapStyle, setPlaceCoordinates } = useGeo();
 	const { propertyData, currentId, setCurrentId } = usePropertyApi();
 	const { landmarkData } = useLandmarkApi();
 
+	const [ isMapLoaded, setIsMapLoaded ] = useState(false);
+
 	const onDblClick = useCallback((e: any) => {
-		const lng = e.lngLat.lng;
-		const lat = e.lngLat.lat;
+		const { lng, lat } = e.lngLat
 		const coordinates = { longitude: lng, latitude: lat };
 		setPlaceCoordinates(coordinates);
 	}, []);
 
 	const onClick = (event: any) => {
-		const feature = event.features && event.features[0];
+		const feature = event?.features[0];
 		if (feature) {
 			setCurrentId(feature.property_id);
 			propertyInfo && setPropertyInfo(feature); 
 		}
 	}
 
+	const onLoad = () => setIsMapLoaded(true);
+
 	return (
 		<div className="map-wrapper">
-			<Dropdown/>
 			<Map
 				ref={mapRef}
 				initialViewState={viewport}
 				mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} 
-				mapStyle={currentBasemap}
+				mapStyle={mapStyle}
 				onDblClick={onDblClick}
 				doubleClickZoom={false}
 				antialias={true}
-				preserveDrawingBuffer={true}
+				onLoad={onLoad}
 				onClick={onClick}
 				interactiveLayerIds={['unclustered-point']}
 			>
-				<Points landmarkData={landmarkData}/>
-		        <CustomMarker 
-		        	filterProperties={propertyData}
-		        	propertyInfo={propertyInfo}
-		        	currentId={currentId}
-		        	setCurrentId={setCurrentId}
-		        	setPropertyInfo={setPropertyInfo}
-		        />
+				{isMapLoaded && <>
+					<Points landmarkData={landmarkData}/>
+			        <CustomMarker 
+			        	filterProperties={propertyData}
+			        	propertyInfo={propertyInfo}
+			        	currentId={currentId}
+			        	setCurrentId={setCurrentId}
+			        	setPropertyInfo={setPropertyInfo}
+			        />
+		        </>}
 			</Map>
+			<Dropdown/>
 		</div>
 	)
 }
 
-MapContainer.displayName="MapContainer";
+Layout.displayName="Layout";

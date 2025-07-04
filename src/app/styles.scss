@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: rgba(235, 235, 235, 1);
+  font-family: "Libre Baskerville", serif;
+}
+.wrapper {
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+  } 
+}

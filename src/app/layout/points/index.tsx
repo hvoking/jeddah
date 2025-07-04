@@ -1,5 +1,5 @@
 // Third party imports
-import { Source, Layer, LayerProps } from 'react-map-gl';
+import { Source, Layer, LayerProps } from 'react-map-gl/mapbox';
 
 export const Points = ({ landmarkData }: any) => {
 	const unclusteredPointLayer: LayerProps = {
